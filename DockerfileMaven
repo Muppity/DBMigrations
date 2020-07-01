@@ -1,0 +1,8 @@
+#latest Image
+FROM maven
+#containing personal instructions.
+COPY testfile.txt .
+RUN -it --rm --name mvnInstance -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 mvn clean install
+LABEL "name"="mvnInstance"
+
+

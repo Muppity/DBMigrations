@@ -1,0 +1,5 @@
+FROM jenkins
+RUN -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+--env JAVA_OPTS=-Dhudson.footer URL=http://muppity.com 
+COPY  $ID:/var/jenkins_home
+COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy

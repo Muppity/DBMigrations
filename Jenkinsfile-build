@@ -1,0 +1,18 @@
+pipeline {
+	agent  { docker { image 'maven:3.3.3' } }
+
+	stages {
+		checkout scm
+
+		stage('Apply Database Migrations') {
+      steps {
+        script {
+          
+            sh '/Muppity flywayMigrate --info'
+          
+          }
+        }
+      }
+    }
+	}
+}
