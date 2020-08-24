@@ -4,6 +4,6 @@ FROM flyway/flyway:6.5.0
 #COPY testfile.txt .
 RUN flyway
 LABEL "name"="flwInstance"
-COPY ./SQLFiles/ /sql/
+COPY ./SQLFiles/*.sql /sql/
 
 

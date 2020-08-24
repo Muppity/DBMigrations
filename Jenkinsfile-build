@@ -8,7 +8,7 @@ pipeline {
       steps {
         script {
           
-            sh '/Muppity flywayMigrate --info'
+            sh './Muppity flywayMigrate --info'
           
           }
         }
